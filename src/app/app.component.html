@@ -1,0 +1,36 @@
+<header class="navbar-horizontal">
+  <nav class="navbar-container">
+    <div class="nav-links">
+      <a routerLink="/" class="nav-link">🏠 Home</a>
+      <a *ngIf="!isLoggedIn" routerLink="/login" class="nav-link">🔑 Login</a>
+      <a *ngIf="!isLoggedIn" routerLink="/sign-up" class="nav-link">🌟 Sign-Up</a>
+      <a *ngIf="isLoggedIn" routerLink="/profile" class="nav-link">🙍 Profile</a>
+      <a *ngIf="isLoggedIn" [routerLink]="getPortfolioLink()" class="nav-link">📁 Portfolio</a>
+    </div>
+    <div *ngIf="isLoggedIn" class="user-info">
+      Welcome, <strong>{{ userName }}</strong>
+    </div>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside class="navbar-vertical">
+    <h1 class="app-name">📷 InstaLite</h1>
+    <a routerLink="/users-list" class="nav-link">👥 Users List</a>
+    <a *ngIf="isLoggedIn && isAdmin" routerLink="/admin/dashboard" class="nav-link">⚙️ Dashboard</a>
+    <a *ngIf="isLoggedIn && isAdmin" routerLink="/admin/user-management" class="nav-link">👤 User Management</a>
+    <a *ngIf="isLoggedIn" routerLink="/upload-image" class="nav-link">📤 Upload Image</a>
+    <a *ngIf="isLoggedIn" routerLink="/upload-video" class="nav-link">🎥 Upload Video</a>
+    <a
+      *ngIf="isLoggedIn"
+      (click)="logout()"
+      class="nav-link logout-button"
+    >
+      🚪 Logout
+    </a>
+  </aside>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

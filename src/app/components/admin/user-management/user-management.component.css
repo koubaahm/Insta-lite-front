@@ -1,0 +1,215 @@
+/* Container principal */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f0f0f0; /* Gris clair */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+  font-size: 2em;
+  color: #007bff; /* Bleu vif */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+  color: #6c63ff; /* Violet doux */
+  margin-bottom: 15px;
+}
+
+/* Bouton pour afficher/masquer le formulaire */
+.add-user-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #1e90ff, #6a6a6a); /* Dégradé bleu-gris */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.add-user-btn:hover {
+  background: linear-gradient(45deg, #007bff, #5a5a5a); /* Dégradé plus foncé */
+  transform: translateY(-3px);
+}
+
+/* Formulaire au-dessus du tableau */
+.form-container {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f9f9f9; /* Blanc cassé */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulaire : champs et boutons */
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1em;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #1e90ff, #6a6a6a);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(45deg, #007bff, #5a5a5a);
+  transform: translateY(-3px);
+}
+
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Table des utilisateurs */
+/* Conteneur pour le tableau avec défilement */
+.table-container {
+  max-height: 300px; /* Ajustez la hauteur maximale */
+  overflow-y: auto; /* Défilement vertical uniquement */
+  margin-top: 20px; /* Espace entre le formulaire et le tableau */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style du tableau à l'intérieur */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+/* Boutons d'actions dans la table */
+.edit-btn {
+  background-color: #28a745; /* Vert vif */
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #218838; /* Vert plus foncé */
+}
+
+.delete-btn {
+  background-color: #e74c3c; /* Rouge vif */
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b; /* Rouge plus foncé */
+}
+
+/* Messages d'erreur */
+.error-message {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-table th,
+  .user-table td {
+    font-size: 0.9em;
+  }
+
+  .submit-btn,
+  .add-user-btn {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  .user-form {
+    gap: 10px;
+  }
+}

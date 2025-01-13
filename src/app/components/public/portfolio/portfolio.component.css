@@ -1,0 +1,110 @@
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f0f0f0; /* Gris très clair */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  color: #1e90ff; /* Bleu clair */
+}
+
+h3 {
+  font-size: 1.8em;
+  color: #5a5a5a; /* Bleu-gris */
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* Error Message */
+.error {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 25px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #1e90ff, #6a6a6a); /* Bleu clair à gris */
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Media Grid */
+.media-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.media-item {
+  flex: 1 1 calc(33.333% - 20px); /* 3 colonnes */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.media-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.media-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.media-item p {
+  font-size: 1em;
+  padding: 10px;
+  background: #f4f4f4;
+  color: #6a6a6a; /* Gris légèrement foncé */
+  font-weight: bold;
+}
+
+.media-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.media-item a:hover p {
+  color: #1e90ff; /* Bleu clair */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .media-item {
+    flex: 1 1 calc(50% - 20px); /* 2 colonnes */
+  }
+}
+
+@media (max-width: 480px) {
+  .media-item {
+    flex: 1 1 100%; /* 1 colonne */
+  }
+}

@@ -1,0 +1,2 @@
+export const IMAGE_URL = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.aouYjUZqTYLZI9OUX2WTIgHaHa%26pid%3DApi&f=1&ipt=ac17debe720e5befff88ffaf013f583a0670a6b554c2a783b740f6d47fbc86c2&ipo=images';
+export const VIDEO_URL = 'https://www.w3schools.com/html/mov_bbb.mp4';

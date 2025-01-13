@@ -1,0 +1,25 @@
+<div class="dashboard-container">
+  <h1>📊 Tableau de bord</h1>
+
+  <div *ngIf="loading" class="loading">Chargement des statistiques...</div>
+
+  <div *ngIf="!loading" class="stats-grid">
+    <!-- Statistiques des images -->
+    <div class="stat-card">
+      <h2>🖼️ Images</h2>
+      <p><strong>Total :</strong> {{ totalImages }}</p>
+      <p><strong>Volume total :</strong> {{ totalImageSize | number }} octets</p>
+      <p><strong>Publiques :</strong> {{ publicImages }}</p>
+      <p><strong>Privées :</strong> {{ privateImages }}</p>
+    </div>
+
+    <!-- Statistiques des vidéos -->
+    <div class="stat-card">
+      <h2>🎥 Vidéos</h2>
+      <p><strong>Total :</strong> {{ totalVideos }}</p>
+      <p><strong>Volume total :</strong> {{ totalVideoSize | number }} octets</p>
+      <p><strong>Publiques :</strong> {{ publicVideos }}</p>
+      <p><strong>Privées :</strong> {{ privateVideos }}</p>
+    </div>
+  </div>
+</div>

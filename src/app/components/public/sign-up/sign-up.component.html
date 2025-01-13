@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>📝 Inscription</h2>
+
+  <!-- Message de succès -->
+  <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+
+  <!-- Message d'erreur -->
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+  <form [formGroup]="signUpForm" (ngSubmit)="signUp()" class="signup-form">
+    <div class="form-group">
+      <label for="name">Nom :</label>
+      <input id="name" formControlName="name" type="text" class="form-control" placeholder="Entrez votre nom" />
+      <div class="error" *ngIf="signUpForm.get('name')?.invalid && signUpForm.get('name')?.touched">
+        Le nom doit contenir au moins 3 caractères.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email :</label>
+      <input id="email" formControlName="email" type="email" class="form-control" placeholder="Entrez votre email" />
+      <div class="error" *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
+        Entrez une adresse email valide.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe :</label>
+      <input id="password" formControlName="password" type="password" class="form-control" placeholder="Entrez votre mot de passe" />
+      <div class="error" *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">
+        Le mot de passe doit contenir au moins 6 caractères.
+      </div>
+    </div>
+
+<!--     <div class="form-group">
+      <label for="role">Rôle :</label>
+      <select id="role" formControlName="role" class="form-control">
+        <option value="USER">Utilisateur</option>
+        <option value="ADMIN">Administrateur</option>
+      </select>
+    </div> -->
+
+    <button type="submit" [disabled]="signUpForm.invalid" class="submit-btn">S'inscrire</button>
+  </form>
+</div>

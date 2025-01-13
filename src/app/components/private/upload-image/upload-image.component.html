@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>📤 Uploader une image</h2>
+
+  <form enctype="multipart/form-data" (ngSubmit)="onUpload()" class="upload-form">
+    <!-- Fichier -->
+    <div class="form-group">
+      <label for="fileinput">📁 Sélectionnez un fichier :</label>
+      <input
+        type="file"
+        id="fileinput"
+        (change)="onFileSelected($event)"
+        accept="image/*"
+        class="form-control file-input"
+      />
+      <div *ngIf="errorMessage && !selectedFile">
+        <small class="error">⚠️ Veuillez sélectionner un fichier image.</small>
+      </div>
+    </div>
+
+    <!-- Visibilité -->
+    <div class="form-group">
+      <label for="visibility">👁️ Visibilité :</label>
+      <select
+        id="visibility"
+        [(ngModel)]="visibility"
+        name="visibility"
+        class="form-control visibility-select"
+      >
+        <option value="PUBLIC">🌍 Public</option>
+        <option value="PRIVATE">🔒 Privé</option>
+      </select>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <button type="submit" [disabled]="!selectedFile" class="upload-btn">
+      🚀 Uploader
+    </button>
+  </form>
+
+  <!-- Messages de succès et d'erreur -->
+  <div *ngIf="successMessage" class="success-message">
+    ✅ {{ successMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    ⚠️ {{ errorMessage }}
+  </div>
+</div>

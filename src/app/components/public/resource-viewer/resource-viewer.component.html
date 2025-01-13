@@ -1,0 +1,58 @@
+<div class="container">
+  <h2 class="resource-title">{{ resource?.title }}</h2>
+
+  <!-- Affichage de l'image ou de la vidéo -->
+  <div *ngIf="resourceType === 'image'" class="media-container">
+    <img
+      [src]="'http://localhost:8089/api/images/image/' + resource.path"
+      [alt]="resource.title"
+      class="media-image"
+    />
+  </div>
+  <div *ngIf="resourceType === 'video'" class="media-container">
+    <video controls class="media-video">
+      <source [src]="'http://localhost:8089/api/videos/view/' + resource.path" type="video/mp4" />
+      Votre navigateur ne supporte pas la lecture des vidéos.
+    </video>
+  </div>
+
+  <!-- Boutons d'administration -->
+  <div *ngIf="isAdmin" class="admin-actions">
+    <button (click)="downloadResource()" class="action-btn download-btn">Télécharger</button>
+    <button (click)="deleteResource()" class="action-btn delete-btn">Supprimer</button>
+  </div>
+
+  <!-- Section des commentaires -->
+  <div class="comments-section">
+    <h3>💬 Commentaires</h3>
+    <div *ngFor="let comment of comments" class="comment-item">
+      <p>{{ comment.content }}</p>
+      <small>
+        Posté par :
+        {{ comment.createdById === userId ? 'Moi' : comment.userName || 'Utilisateur inconnu' }}
+      </small>
+
+      <!-- Bouton de suppression des commentaires -->
+      <button
+        *ngIf="isAdmin || isUserCommentOwner(comment.id)"
+        (click)="deleteComment(comment.id)"
+        class="comment-delete-btn"
+      >
+        Supprimer
+      </button>
+    </div>
+  </div>
+
+  <!-- Formulaire pour ajouter un commentaire -->
+  <div *ngIf="isLoggedIn" class="comment-form">
+    <textarea
+      [(ngModel)]="newComment"
+      placeholder="Écrire un commentaire"
+      class="comment-input"
+    ></textarea>
+    <button (click)="addComment()" class="action-btn comment-btn">Publier</button>
+  </div>
+
+  <!-- Message d'erreur -->
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>👥 Liste des utilisateurs</h2>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <ul class="user-list">
+    <li *ngFor="let user of users" (click)="viewPortfolio(user.id)" class="user-item">
+      <span class="user-name">{{ user.name }}</span>
+      <button class="view-btn">Voir le portfolio ➡️</button>
+    </li>
+  </ul>
+</div>

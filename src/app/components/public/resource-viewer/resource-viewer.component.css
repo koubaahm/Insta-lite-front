@@ -1,0 +1,176 @@
+/* Container principal */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre de la ressource */
+.resource-title {
+  font-size: 2em;
+  color: #6c63ff; /* Violet doux */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Conteneur média */
+.media-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.media-image {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.media-video {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Boutons d'administration */
+.admin-actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.action-btn {
+  padding: 10px 15px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-btn {
+  background: linear-gradient(45deg, #28a745, #218838); /* Vert */
+}
+
+.download-btn:hover {
+  background: linear-gradient(45deg, #218838, #1c7430);
+}
+
+.delete-btn {
+  background: linear-gradient(45deg, #e74c3c, #c0392b); /* Rouge */
+}
+
+.delete-btn:hover {
+  background: linear-gradient(45deg, #c0392b, #a93226);
+}
+
+/* Section des commentaires */
+.comments-section {
+  margin: 30px 0;
+  text-align: left;
+}
+
+.comments-section h3 {
+  font-size: 1.5em;
+  color: #6c63ff; /* Violet doux */
+  margin-bottom: 15px;
+}
+
+.comment-item {
+  background-color: #f1f1f1;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comment-item p {
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+
+.comment-item small {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.comment-delete-btn {
+  padding: 5px 10px;
+  font-size: 0.9em;
+  color: #fff;
+  background: #e74c3c;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-delete-btn:hover {
+  background: #c0392b;
+}
+
+/* Formulaire de commentaire */
+.comment-form {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.comment-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+.comment-btn {
+  align-self: flex-end;
+  background: linear-gradient(45deg, #1e90ff, #6a6a6a); /* Bleu-Gris */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.comment-btn:hover {
+  background: linear-gradient(45deg, #007bff, #5a5a5a);
+  transform: translateY(-3px);
+}
+
+/* Message d'erreur */
+.error-message {
+  color: #e74c3c; /* Rouge vif */
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .admin-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .comments-section h3 {
+    font-size: 1.3em;
+  }
+}

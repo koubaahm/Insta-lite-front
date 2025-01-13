@@ -1,0 +1,112 @@
+/* Container */
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f0f0f0; /* Gris très clair */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+h1 {
+  font-size: 2em;
+  color: #007bff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Success and Error Messages */
+.success-message {
+  color: #28a745;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.error {
+  font-size: 0.9em;
+  color: #e74c3c;
+  margin-top: 5px;
+}
+
+/* Form Styles */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #1e90ff, #6a6a6a); /* Bleu clair à gris */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: linear-gradient(45deg, #007bff, #5a5a5a);
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .form-control {
+    font-size: 0.9em;
+  }
+
+  .submit-btn {
+    font-size: 0.9em;
+  }
+}

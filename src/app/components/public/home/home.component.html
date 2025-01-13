@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>Bienvenue sur Insta-Lite3 🌟</h1>
+  <p>
+    Insta-Lite3, c'est votre espace pour partager des souvenirs, découvrir des moments uniques et vous connecter avec des esprits créatifs du monde entier. <br />
+    Faites briller votre univers, une image ou une vidéo à la fois.
+  </p>
+
+  <!-- Boutons d'action -->
+  <div *ngIf="!isLoggedIn" class="buttons">
+    <a href="/login" class="btn">🔑 Se connecter</a>
+    <a href="/sign-up" class="btn">🌟 Créer un compte</a>
+  </div>
+
+  <!-- Section Images et Vidéos -->
+  <div class="media-section">
+    <h3>✨ Explorez des images et vidéos publiques</h3>
+    <div class="media-grid">
+      <div *ngFor="let image of publicImages" class="media-item">
+        <a [routerLink]="['/resource', 'image', image.id]">
+          <img [src]="'http://localhost:8089/api/images/image/' + image.path" [alt]="image.title" />
+          <p>{{ image.title }}</p>
+        </a>
+      </div>
+
+      <div *ngFor="let video of publicVideos" class="media-item">
+        <a [routerLink]="['/resource', 'video', video.id]">
+          <app-video-player 
+            [videoSrc]="video.path" 
+            [videoTitle]="video.title">
+          </app-video-player>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isLoggedIn" class="media-section">
+    <h3>🔒 Vos images privés</h3>
+    <div class="media-grid">
+      <div *ngFor="let image of privateImages" class="media-item">
+        <a [routerLink]="['/resource', 'image', image.id]">
+          <img [src]="'http://localhost:8089/api/images/image/' + image.path" [alt]="image.title" />
+          <p>{{ image.title }}</p>
+        </a>
+      </div>
+
+      <div *ngFor="let video of privateVideos" class="media-item">
+        <a [routerLink]="['/resource', 'video', video.id]">
+          <app-video-player 
+            [videoSrc]="video.path" 
+            [videoTitle]="video.title">
+          </app-video-player>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
